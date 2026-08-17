@@ -1,0 +1,29 @@
+{
+  "name": "hub-de-leitura-teste-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabriellcostta13/hub-de-leitura-TESTE-ui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gabriellcostta13/hub-de-leitura-TESTE-ui/issues"
+  },
+  "homepage": "https://github.com/gabriellcostta13/hub-de-leitura-TESTE-ui#readme",
+  "dependencies": {
+    "cypress": "^15.20.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.8",
+    "@faker-js/faker": "^10.6.0",
+    "mocha": "^11.8.0"
+  }
+}
