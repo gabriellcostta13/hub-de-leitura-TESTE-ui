@@ -4,7 +4,7 @@ describe('Funcionalidade: Catálogo de livros', () => {
         cy.visit('catalog.html')
     });
 
-    it.skip('Deve clicar no botão adicionar à cesta', () => {
+    it('Deve clicar no botão adicionar à cesta', () => {
         cy.get(':nth-child(1) > .card > .card-body > .mt-auto > .d-grid > .btn-primary').click()
         cy.get('#cart-count').should('contain', 1)
     });
@@ -15,12 +15,12 @@ describe('Funcionalidade: Catálogo de livros', () => {
 
     it('Deve clicar no primeiro botão Adicionar à cesta', () => {
         cy.get('.btn-primary').first().click()
-         cy.get('#global-alert-container').should('contain', '1984')
+        cy.get('#global-alert-container').should('contain', '1984')
     });
 
     it('Deve clicar no último botão Adicionar à cesta', () => {
         cy.get('.btn-primary').last().click()
-         cy.get('#global-alert-container').should('contain', 'O Alquimista')
+        cy.get('#global-alert-container').should('contain', 'O Alquimista')
     });
 
     it('Deve clicar no quinto botão Adicionar à cesta', () => {
@@ -29,7 +29,7 @@ describe('Funcionalidade: Catálogo de livros', () => {
     });
 
 
-it.only('Deve clicar no nome do livro e direcionar para a tela do livro', () => {
+it('Deve clicar no nome do livro e direcionar para a tela do livro', () => {
     cy.contains('Dom Casmurro').click()
     cy.url().should('include', 'book-details')
     cy.get('#add-to-cart-btn').click()
