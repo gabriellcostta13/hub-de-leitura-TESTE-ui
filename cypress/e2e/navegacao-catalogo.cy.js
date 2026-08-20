@@ -10,11 +10,9 @@ describe('Funcionalidade: Navegação até o catálogo', () => {
     cy.contains('O Código Da Vinci').click()
     cy.get('#add-to-cart-btn').click()
     
-
-    
-
-
   });
 
 
 });
+
+it('teste ', () => {});
