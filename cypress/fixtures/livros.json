@@ -1,0 +1,16 @@
+[
+	{
+		"livro": "1984",
+		"categoria": "Ficção"
+	},
+
+	{
+		"livro": "Dom Quixote",
+		"categoria": "Romance"
+	},
+
+	{
+		"livro": "O Hobbit",
+		"categoria": "Aventura"
+	}
+]
