@@ -35,15 +35,23 @@ describe("Funcionalidade: Cadastro no Hub de Leitura", () => {
 	});
 
 	it("Deve fazer o cadastro com sucesso usando comando customizado", () => {
-		const email = `Teste${Date.now()}@teste.com`;
+		let email = `Teste${Date.now()}@teste.com`;
 		const nome = faker.person.fullName();
 		cy.preencherCadastro(nome, email, "(51)99999-9999", "123456*", "123456*");
 		cy.url().should("include", "dashboard");
 	});
 
 
-	it.only("Deve fazer o cadastro com sucesso usando Page Objects", () => {
-
+	it("Deve fazer o cadastro com sucesso usando Page Objects", () => {
+		let email = `Teste${Date.now()}@teste.com`;
+		cadastroPages.preencherCadastro('Gabriel Costa', email, "(51)99999-9999", "123456*", "123456*")
+		cy.url().should("include", "dashboard");
 	});	
 
-});
+	it("Deve validar mensagem ao tentar cadastrar sem preencher nome", () => {
+		cadastroPages.preencherCadastro ('','gabitester15411@teste.com','(51)99999-9999', '123456*', '123456*')
+		cy.get(':nth-child(1) > .invalid-feedback').should('contain', 'Nome deve ter pelo menos 2 caracteres')
+
+	});
+
+})
