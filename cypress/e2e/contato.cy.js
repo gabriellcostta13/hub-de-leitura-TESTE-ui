@@ -6,7 +6,7 @@ describe('Funcionalidade: Contato', () => {
 
   it('Deve preencher formulário de contato com sucesso', () => {
     cy.get('[name="name"]').type('Joaozinho Silva')
-    cy.get('[name="email"]').type('joaozinhosilva@gmail.com')
+    cy.get('[name="email"]').type('joaozinhosilva1@gmail.com')
     cy.get('[name="subject"]').select('Parcerias')
     cy.get('[name="message"]').type('Mensagem de teste')
     cy.get('#btn-submit').click()
@@ -35,25 +35,22 @@ describe('Funcionalidade: Contato', () => {
 
   })
 
-  it('Deve validar mensagem de erro ao enviar sem selecionar Assunto', () => {
+it('Deve validar mensagem de erro ao enviar sem selecionar Assunto', () => {
     cy.get('[name="name"]').type('Joaozinho Silva')
-    cy.get('[name="email"]').type('joaozinhosilva@gmail.com')
-    //cy.get('[name="subject"]').select('Parcerias')
-    cy.get('[name="message"]')
+    cy.get('[name="email"]').type('joaozinhosilv@gmail.com')
+    cy.get('[name="message"]').type('Mensagem de teste')
     cy.get('#btn-submit').click()
     // Resultado esperado
     cy.get('#alert-container').should('contain', 'Por favor, selecione o Assunto.')
+})
 
-
-  })
-
-  it('Deve validar mensagem de erro ao enviar sem preencher a mensagem', () => {
+it('Deve validar mensagem de erro ao enviar sem preencher a mensagem', () => {
     cy.get('[name="name"]').type('Joaozinho Silva')
-    cy.get('[name="email"]').type('joaozinhosilva@gmail.com')
+    cy.get('[name="email"]').type('joaozinhosilv3a@gmail.com')
     cy.get('[name="subject"]').select('Parcerias')
     cy.get('[name="message"]').clear()
     cy.get('#btn-submit').click()
     cy.get('#alert-container').should('contain', 'Por favor, escreva sua Mensagem.')
-  })
+})
 
 })
