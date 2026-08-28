@@ -141,3 +141,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Artefatos gerados pelo Cypress
+cypress/videos/
+cypress/screenshots/

@@ -21,7 +21,7 @@ if (email) this.campoEmail().clear().type(email)
 this.campoTelefone().clear().type(telefone)
 this.campoSenha().clear().type(senha)
 this.campoConfirmarSenha().clear().type(confirmarSenha)
-this.campoAceitarTermos().click()
+this.campoAceitarTermos().check()
 this.botaoCriarConta().click()
 }
 

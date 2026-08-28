@@ -1,18 +1,18 @@
 {
   "name": "hub-de-leitura-teste-ui",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Testes end-to-end do Hub de Leitura com Cypress.",
   "scripts": {
-    "test": "npx cypress run --browser chrome", 
-    "cy:report": "npx cypress run"
+    "test": "cypress run",
+    "cy:open": "cypress open",
+    "cy:run:chrome": "cypress run --browser chrome"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gabriellcostta13/hub-de-leitura-TESTE-ui.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Gabriel Costa",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {

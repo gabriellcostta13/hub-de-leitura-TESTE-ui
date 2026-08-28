@@ -17,7 +17,7 @@ describe("Funcionalidade: Login", () => {
 		cy.login("usuario@teste.com", "user123");
 	});
 
-	it("Deve fazer o login com sucesso com conta Admin - com comando costomizado", () => {
+	it("Deve fazer o login com sucesso com conta Admin usando comando customizado", () => {
 		cy.login("admin@biblioteca.com", "admin123");
 	});
 

@@ -27,7 +27,7 @@
 Cypress.Commands.add('login', (email, senha) => {
 	cy.get("#email").type(email, { log: false });
 	cy.get("#password").type(senha, { log: false })
-	cy.get("#login-btn > .fas").click();
+	cy.get("#login-btn").click();
 	cy.url().should("include", "dashboard");
 });
 
