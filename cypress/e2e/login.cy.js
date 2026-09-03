@@ -1,5 +1,5 @@
 /// <reference types="cypress"/>
-import user from "../fixtures/usuario.json"
+const user = require("../fixtures/usuario.json");
 
 describe("Funcionalidade: Login", () => {
 	beforeEach(() => {
