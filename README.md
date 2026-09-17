@@ -100,5 +100,4 @@ Projeto em desenvolvimento contínuo, usado como prática de estudos em QA/autom
 ## 👤 Autor
 
 **Gabriel Costa**
-
 [GitHub](https://github.com/gabriellcostta13)
