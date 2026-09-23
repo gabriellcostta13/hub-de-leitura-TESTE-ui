@@ -1,43 +1,103 @@
-# Hub de Leitura — Testes E2E com Cypress
+# 🧪 Hub de Leitura — Automação de Testes E2E com Cypress
 
-Projeto de automação de testes de interface utilizando **Cypress**, desenvolvido para praticar testes end-to-end (E2E) no sistema **Hub de Leitura**.
+Projeto de portfólio em **Quality Assurance (QA)** focado em automação de testes de interface e validação de fluxos **End-to-End (E2E)** de uma aplicação web.
 
-## 🎯 Objetivo
+O projeto demonstra a aplicação prática de conceitos de QA e automação com **Cypress + JavaScript**, incluindo criação de cenários, assertions, geração de dados dinâmicos, comandos customizados e organização de testes.
 
-Automatizar e validar os principais fluxos da aplicação, aplicando boas práticas de testes: seletores, assertions, comandos customizados e geração de dados dinâmicos.
+> Atualmente atuo profissionalmente em QA com **testes manuais e exploratórios em um sistema ERP**, enquanto desenvolvo minhas habilidades em automação de testes. Este projeto representa essa evolução técnica e faz parte do meu portfólio.
 
-O projeto também tem como objetivo consolidar conhecimentos práticos de **QA e automação de testes**.
+## 🎯 Objetivos
 
-## 🛠️ Tecnologias utilizadas
+* Automatizar fluxos relevantes da aplicação;
+* Validar comportamentos esperados por meio de **assertions**;
+* Trabalhar com testes funcionais e E2E;
+* Utilizar dados dinâmicos para reduzir dependência de massa fixa;
+* Criar **Custom Commands** para reutilização de ações;
+* Manter os cenários organizados e legíveis;
+* Praticar execução de testes em modo interativo e headless.
 
-- JavaScript
-- [Cypress](https://www.cypress.io/)
-- Node.js
-- [Faker.js](https://fakerjs.dev/) — geração de dados dinâmicos
-- Mocha
-- Biome — lint/formatação
+## 🧪 Cenários automatizados
+
+| Cenário       | O que é trabalhado                               |
+| ------------- | ------------------------------------------------ |
+| **Cadastro**  | Preenchimento e envio do formulário de cadastro  |
+| **Login**     | Autenticação utilizando credenciais válidas      |
+| **Fluxo E2E** | Cadastro de usuário → login com o mesmo usuário  |
+| **Catálogo**  | Acesso e interação com o catálogo                |
+| **Busca**     | Fluxo de busca de livros                         |
+| **Navegação** | Navegação entre páginas e elementos da aplicação |
+| **Contato**   | Fluxo do formulário de contato                   |
+
+### 🔄 Fluxo E2E principal
+
+```text
+Geração de dados
+      ↓
+Cadastro
+      ↓
+Validação
+      ↓
+Login com as mesmas credenciais
+      ↓
+Validação do acesso
+```
+
+## 🛠️ Tecnologias e ferramentas
+
+* JavaScript
+* Cypress 15
+* Node.js
+* @faker-js/faker
+* Mocha
+* Biome
+* Git / GitHub
+
+## 🔎 Conceitos de QA aplicados
+
+* Testes funcionais
+* Testes End-to-End
+* Testes de UI
+* Assertions
+* Seletores de elementos
+* Massa de dados dinâmica
+* Custom Commands
+* Reutilização de código
+* Validação de fluxos de negócio
+* Organização de suítes de teste
+* Execução interativa e headless
 
 ## 📂 Estrutura do projeto
 
-```
+```text
 hub-de-leitura-TESTE-ui/
 ├── cypress/
-│   ├── e2e/            # Specs de teste (cenários)
-│   ├── fixtures/        # Massas de dados estáticas
-│   └── support/          # Comandos customizados e configurações globais
+│   ├── e2e/                 # Cenários automatizados
+│   ├── fixtures/            # Massas de dados
+│   └── support/
+│       └── commands.js      # Custom Commands
 ├── cypress.config.js
 ├── package.json
 └── README.md
 ```
 
-> Ajuste os nomes das subpastas acima caso a estrutura real do seu `cypress/` seja diferente.
+## ♻️ Custom Commands
 
-## 🚀 Como rodar o projeto
+O projeto utiliza **Custom Commands** para centralizar ações repetitivas, como cadastro e login.
+
+A separação adotada mantém:
+
+* **Custom Commands:** ações reutilizáveis;
+* **Arquivos de teste:** cenários e **assertions principais**.
+
+Essa organização melhora a legibilidade e facilita a manutenção dos testes.
+
+## 🚀 Como executar
 
 ### Pré-requisitos
 
-- [Node.js](https://nodejs.org/) instalado (recomendado LTS)
-- Acesso à aplicação Hub de Leitura (URL configurada em `cypress.config.js`)
+* Node.js (recomendado LTS);
+* Aplicação Hub de Leitura disponível localmente;
+* Aplicação configurada em `http://localhost:3000`.
 
 ### Instalação
 
@@ -47,57 +107,49 @@ cd hub-de-leitura-TESTE-ui
 npm install
 ```
 
-### Executando os testes
-
-Abrir o Cypress em modo interativo (recomendado durante o desenvolvimento dos testes):
+### Cypress em modo interativo
 
 ```bash
 npm run cy:open
 ```
 
-Rodar todos os testes em modo headless (terminal):
+### Execução headless
 
 ```bash
 npm test
 ```
 
-Rodar os testes especificamente no Chrome:
+### Execução no Chrome
 
 ```bash
 npm run cy:run:chrome
 ```
 
-## 🧪 Testes automatizados
+## 💡 O que este projeto demonstra
 
-Entre os principais cenários trabalhados no projeto estão:
+Este projeto evidencia a aplicação prática de:
 
-- Cadastro de usuário
-- Login
-- Fluxo End-to-End de cadastro + login
-- Validação de navegação
-- Validação de elementos da interface
-- Utilização de dados dinâmicos com Faker
-- Comandos customizados do Cypress
+* criação e organização de cenários de teste;
+* automação de fluxos de usuário;
+* validação de comportamentos com assertions;
+* geração de dados dinâmicos;
+* reutilização de ações com Custom Commands;
+* organização visando legibilidade e manutenção;
+* execução de testes de UI em diferentes modos.
 
-### 🔄 Fluxo E2E principal
+## 👨‍💻 Sobre mim
 
-```
-Cadastro
-   ↓
-Validação do cadastro
-   ↓
-Acesso à tela de login
-   ↓
-Login com o mesmo usuário criado
-   ↓
-Validação do login
-```
+Sou estudante de **Engenharia da Qualidade de Software** e profissional de **Quality Assurance (QA)**.
 
-## 📌 Status do projeto
+Atuo com **testes manuais e exploratórios em um sistema ERP**, realizando atividades relacionadas à identificação e acompanhamento de bugs, testes funcionais, validação de dados com SQL, documentação e criação de casos de teste.
 
-Projeto em desenvolvimento contínuo, usado como prática de estudos em QA/automação (curso EBAC).
+Paralelamente, venho desenvolvendo minhas habilidades em **automação de testes**, com foco em Cypress, JavaScript e boas práticas de QA.
 
-## 👤 Autor
+## 🔗 Links
 
-**Gabriel Costa**
-[GitHub](https://github.com/gabriellcostta13)
+* [GitHub](https://github.com/gabriellcostta13)
+* [LinkedIn](https://www.linkedin.com/in/gabrielcostatec)
+
+## 🏷️ Keywords
+
+`QA` · `Quality Assurance` · `Testes Manuais` · `Testes Funcionais` · `Testes E2E` · `Automação de Testes` · `Cypress` · `JavaScript` · `SQL` · `ERP` · `Git` · `GitHub`
