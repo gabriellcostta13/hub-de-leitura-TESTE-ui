@@ -1,155 +1,115 @@
 # 🧪 Hub de Leitura — Automação de Testes E2E com Cypress
 
-Projeto de portfólio em **Quality Assurance (QA)** focado em automação de testes de interface e validação de fluxos **End-to-End (E2E)** de uma aplicação web.
+Projeto de automação de testes de interface desenvolvido para praticar
+testes End-to-End (E2E) utilizando Cypress.
 
-O projeto demonstra a aplicação prática de conceitos de QA e automação com **Cypress + JavaScript**, incluindo criação de cenários, assertions, geração de dados dinâmicos, comandos customizados e organização de testes.
+## 🎯 Objetivo
 
-> Atualmente atuo profissionalmente em QA com **testes manuais e exploratórios em um sistema ERP**, enquanto desenvolvo minhas habilidades em automação de testes. Este projeto representa essa evolução técnica e faz parte do meu portfólio.
+Automatizar fluxos importantes da aplicação **Hub de Leitura**,
+utilizando dados dinâmicos e comandos reutilizáveis.
 
-## 🎯 Objetivos
-
-* Automatizar fluxos relevantes da aplicação;
-* Validar comportamentos esperados por meio de **assertions**;
-* Trabalhar com testes funcionais e E2E;
-* Utilizar dados dinâmicos para reduzir dependência de massa fixa;
-* Criar **Custom Commands** para reutilização de ações;
-* Manter os cenários organizados e legíveis;
-* Praticar execução de testes em modo interativo e headless.
+O projeto foi desenvolvido como prática de automação aplicada a cenários
+reais de usuário.
 
 ## 🧪 Cenários automatizados
 
-| Cenário       | O que é trabalhado                               |
-| ------------- | ------------------------------------------------ |
-| **Cadastro**  | Preenchimento e envio do formulário de cadastro  |
-| **Login**     | Autenticação utilizando credenciais válidas      |
-| **Fluxo E2E** | Cadastro de usuário → login com o mesmo usuário  |
-| **Catálogo**  | Acesso e interação com o catálogo                |
-| **Busca**     | Fluxo de busca de livros                         |
-| **Navegação** | Navegação entre páginas e elementos da aplicação |
-| **Contato**   | Fluxo do formulário de contato                   |
+Entre os fluxos cobertos estão:
 
-### 🔄 Fluxo E2E principal
+- Cadastro de usuário
+- Login
+- Fluxo completo de cadastro e login
+- Catálogo de livros
+- Busca de livros
+- Navegação pelo catálogo
+- Formulário de contato
 
-```text
-Geração de dados
-      ↓
-Cadastro
-      ↓
-Validação
-      ↓
-Login com as mesmas credenciais
-      ↓
-Validação do acesso
+## 🤖 Técnicas utilizadas
+
+- Cypress
+- JavaScript
+- Testes E2E
+- Testes de UI
+- Assertions
+- Faker para geração de dados dinâmicos
+- Custom Commands
+- Seletores
+- Fixtures
+- Organização de suítes de teste
+
+## 🧩 Custom Commands
+
+Os **Custom Commands** são utilizados para centralizar ações
+reutilizáveis, como preenchimento de cadastro e login.
+
+As principais **assertions permanecem nos arquivos de teste**, mantendo
+a validação dos resultados junto aos cenários executados.
+
+## 📁 Estrutura
+
+``` text
+cypress/
+├── e2e/
+│   ├── cadastro.cy.js
+│   ├── catalogo-buscar.cy.js
+│   ├── catalogo.cy.js
+│   ├── contato.cy.js
+│   ├── end-to-end.cy.js
+│   ├── login.cy.js
+│   └── navegacao-catalogo.cy.js
+├── fixtures/
+│   ├── livros.json
+│   └── usuario.json
+└── support/
+    ├── commands.js
+    └── e2e.js
 ```
 
-## 🛠️ Tecnologias e ferramentas
+## 🚀 Executando o projeto
 
-* JavaScript
-* Cypress 15
-* Node.js
-* @faker-js/faker
-* Mocha
-* Biome
-* Git / GitHub
+Instale as dependências:
 
-## 🔎 Conceitos de QA aplicados
-
-* Testes funcionais
-* Testes End-to-End
-* Testes de UI
-* Assertions
-* Seletores de elementos
-* Massa de dados dinâmica
-* Custom Commands
-* Reutilização de código
-* Validação de fluxos de negócio
-* Organização de suítes de teste
-* Execução interativa e headless
-
-## 📂 Estrutura do projeto
-
-```text
-hub-de-leitura-TESTE-ui/
-├── cypress/
-│   ├── e2e/                 # Cenários automatizados
-│   ├── fixtures/            # Massas de dados
-│   └── support/
-│       └── commands.js      # Custom Commands
-├── cypress.config.js
-├── package.json
-└── README.md
-```
-
-## ♻️ Custom Commands
-
-O projeto utiliza **Custom Commands** para centralizar ações repetitivas, como cadastro e login.
-
-A separação adotada mantém:
-
-* **Custom Commands:** ações reutilizáveis;
-* **Arquivos de teste:** cenários e **assertions principais**.
-
-Essa organização melhora a legibilidade e facilita a manutenção dos testes.
-
-## 🚀 Como executar
-
-### Pré-requisitos
-
-* Node.js (recomendado LTS);
-* Aplicação Hub de Leitura disponível localmente;
-* Aplicação configurada em `http://localhost:3000`.
-
-### Instalação
-
-```bash
-git clone https://github.com/gabriellcostta13/hub-de-leitura-TESTE-ui.git
-cd hub-de-leitura-TESTE-ui
+``` bash
 npm install
 ```
 
-### Cypress em modo interativo
+Abra o Cypress:
 
-```bash
+``` bash
 npm run cy:open
 ```
 
-### Execução headless
+Execute os testes:
 
-```bash
+``` bash
 npm test
 ```
 
-### Execução no Chrome
+Para executar no Chrome:
 
-```bash
+``` bash
 npm run cy:run:chrome
 ```
 
-## 💡 O que este projeto demonstra
+## 🛠️ Tecnologias
 
-Este projeto evidencia a aplicação prática de:
+- Cypress
+- JavaScript
+- Faker
+- Mocha
+- Node.js
+- Git/GitHub
 
-* criação e organização de cenários de teste;
-* automação de fluxos de usuário;
-* validação de comportamentos com assertions;
-* geração de dados dinâmicos;
-* reutilização de ações com Custom Commands;
-* organização visando legibilidade e manutenção;
-* execução de testes de UI em diferentes modos.
+## 📌 O que este projeto demonstra
 
-## 👨‍💻 Sobre mim
+- Automação de fluxos E2E
+- Validação de interface
+- Uso de dados dinâmicos
+- Criação de comandos reutilizáveis
+- Organização de suítes de teste
+- Aplicação de assertions em cenários de teste
 
-Sou estudante de **Engenharia da Qualidade de Software** e profissional de **Quality Assurance (QA)**.
+## 👤 Autor
 
-Atuo com **testes manuais e exploratórios em um sistema ERP**, realizando atividades relacionadas à identificação e acompanhamento de bugs, testes funcionais, validação de dados com SQL, documentação e criação de casos de teste.
+**Gabriel Costa \| Quality Assurance (QA)**
 
-Paralelamente, venho desenvolvendo minhas habilidades em **automação de testes**, com foco em Cypress, JavaScript e boas práticas de QA.
-
-## 🔗 Links
-
-* [GitHub](https://github.com/gabriellcostta13)
-* [LinkedIn](https://www.linkedin.com/in/gabrielcostatec)
-
-## 🏷️ Keywords
-
-`QA` · `Quality Assurance` · `Testes Manuais` · `Testes Funcionais` · `Testes E2E` · `Automação de Testes` · `Cypress` · `JavaScript` · `SQL` · `ERP` · `Git` · `GitHub`
+[GitHub](https://github.com/gabriellcostta13)
